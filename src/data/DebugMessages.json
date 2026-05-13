@@ -91,5 +91,20 @@
             "avatar":"https://stuff.saku.dev/bot-asset/karina/icon/barry.png"
         },
         "content":"super excited to watch 95 live tonight, hi chat <:huhcat:1256522156628774925> lol!"
+    },
+    {
+        "id":"testing",
+        "type":"POPUP",
+        "author":{
+            "name":"TagmanBeesley",
+            "avatar":"https://stuff.saku.dev/bot-asset/karina/icon/barry.png"
+        },
+        "content":"google slides collaboration feature",
+        "attachment":"https://cdn.discordapp.com/attachments/549589798554435625/1422481231936753736/image.png?ex=6a061ea2&is=6a04cd22&hm=5a0b2aa6edcf6db40b58d727c98ade91c57c4f6cf33902f6cfc70b7e54792968&",
+        "retro":{
+            "date":"13 June 2019",
+            "style":"2019",
+            "queueMessageId":"1"
+        }
     }
 ]
