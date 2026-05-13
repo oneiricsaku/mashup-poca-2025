@@ -3,7 +3,7 @@
     <main class="fixed top-0 left-0 w-[1920px] h-[1080px] outline-2 outline-red-500 bg-cover overflow-hidden">
 
         <!-- debug: fixed background -->
-        <div class="absolute inset-0 pointer-events-none bg-gradient-to-br from-purple-950 to-blue-900"></div>
+        <!-- <div class="absolute inset-0 pointer-events-none bg-gradient-to-br from-purple-950 to-blue-900"></div> -->
         
         <!-- Popup Displays: Messages + Avatars. Wrapped in fade transition. These disappear if a full screen message is being displayed  -->
         <div class="absolute inset-0 duration-300" :class="messageDisplay.full ? 'opacity-0' : 'delay-1000'" v-if="showPopups">
