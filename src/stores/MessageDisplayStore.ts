@@ -1,11 +1,8 @@
 import { defineStore } from "pinia";
 import type { MessageData } from "@/types/MessageData";
-import type { UserPopupData } from "@/types/UserPopupData";
-import uniqid from "uniqid";
 
 // -- debug data
 import DebugMessages from "../data/DebugMessages.json";
-import DebugAvatars from "../data/DebugAvatars.json";
 
 export const useMessageDisplayStore = defineStore("messageDisplay", {
     state:() => ({
@@ -13,8 +10,8 @@ export const useMessageDisplayStore = defineStore("messageDisplay", {
         popup:null as null | MessageData,
         // full screen message data
         full:null as null | MessageData,
-        // user icon popup data
-        userIconPopup:[] as UserPopupData[],
+        // retro message data
+        retro:null as null | MessageData,
         // socket connection state
         socketActive:false as boolean
     }),
@@ -27,17 +24,18 @@ export const useMessageDisplayStore = defineStore("messageDisplay", {
             }, 8000);
         },
         setFull(message:MessageData) {
-            if (this.full) return;
+            if (this.full || this.retro) return;
             this.full = message;
             setTimeout(() => {
                 this.full = null;
             }, 8000);
         },
-        setUserPopup(user:UserPopupData) {
-            this.userIconPopup.push(user);
+        setRetro(message:MessageData) {
+            if (this.retro || this.full) return;
+            this.retro = message;
             setTimeout(() => {
-                this.userIconPopup.splice(this.userIconPopup.findIndex(u => u.userId === user.userId), 1);
-            }, 2000);
+                this.retro = null;
+            }, 10000);
         },
 
         // When in debug mode, socket is disabled and random faked events will be sent
@@ -49,16 +47,6 @@ export const useMessageDisplayStore = defineStore("messageDisplay", {
                 const message = DebugMessages[Math.floor(Math.random()*DebugMessages.length)] as MessageData;
                 this.setPopup(message);
             }, 15000);
-
-            // USER ICON POPUPS
-            // -- generate a user ID with random avatar and push to array
-            setInterval(() => {
-                const avatar = DebugAvatars[Math.floor(Math.random()*DebugAvatars.length)];
-                this.setUserPopup({
-                    userId:uniqid(),
-                    userAvatar:avatar
-                });
-            }, 500);
         },
         // -- on keyboard event, set a random full screen message
         setDebugFullMessage() {

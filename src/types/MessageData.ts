@@ -7,4 +7,15 @@ export type MessageData = {
     };
     content?:string;
     attachment?:string;
+    retro?:{
+        date:string;
+        style:NinetyFiveLiveRetroStyles;
+        queueMessageId:string;
+    }
 }
+
+// -- retro era styles
+export type NinetyFiveLiveRetroStyles =
+"2018"|
+"2019"|
+"2021"

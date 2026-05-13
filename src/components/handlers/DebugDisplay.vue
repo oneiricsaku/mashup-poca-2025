@@ -3,7 +3,7 @@
         <p><b>socket:</b> {{ messageDisplayStore.socketActive ? 'connected' : 'disconnected' }}</p>
         <p><b>full:</b> {{ messageDisplayStore.full || "unset" }}</p>
         <p><b>popup:</b> {{ messageDisplayStore.popup || "unset" }}</p>
-        <p><b>users:</b> {{ messageDisplayStore.userIconPopup }}</p>
+        <p><b>retro:</b> {{ messageDisplayStore.retro || "unset"}}</p>
     </div>
 </template>
 
