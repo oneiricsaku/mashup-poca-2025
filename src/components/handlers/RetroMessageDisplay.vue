@@ -1,7 +1,11 @@
 <template>
     <!-- message styles -->
     <!-- 2019 -->
-    <RetroStripe :message="messageDisplayStore.retro" v-if="messageDisplayStore.retro && messageDisplayStore.retro.retro?.style === '2019'"/>
+    <Transition name="fade-out">
+        <div class="absolute inset-0" v-if="messageDisplayStore.retro">
+            <RetroStripe :message="messageDisplayStore.retro" v-if="messageDisplayStore.retro"/>
+        </div>
+    </Transition>
     
     <!-- debug component -->
     <!-- 2019 -->
@@ -22,3 +26,10 @@
     // -- import debug message data
     const debugMessage = DebugMessages[10] as MessageData;
 </script>
+
+<style scoped>
+    .fade-out-leave-to {
+        opacity:0;
+        transition-duration:.4s;
+    }
+</style>

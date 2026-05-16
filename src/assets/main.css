@@ -1,6 +1,24 @@
 @import url(https://api.fontshare.com/v2/css?f[]=satoshi@1,2&display=swap);
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
+
+/* Unineue */
+@font-face {
+    font-family: 'UniNeue';
+    src: url('/font/unineue/Uni-Neue-Bold.otf') format('opentype');
+    font-weight: regular;
+    font-display: swap;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'UniNeue';
+    src: url('/font/unineue/Uni-Neue-Heavy.otf') format('opentype');
+    font-weight: bold;
+    font-display: swap;
+    font-style: normal;
+}
 
 @theme {
     --font-sans:"Satoshi", sans-serif;
+    --font-unineue:"UniNeue", sans-serif;
 }

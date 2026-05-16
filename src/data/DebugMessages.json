@@ -99,10 +99,38 @@
             "name":"TagmanBeesley",
             "avatar":"https://stuff.saku.dev/bot-asset/karina/icon/barry.png"
         },
-        "content":"google slides collaboration feature",
-        "attachment":"https://cdn.discordapp.com/attachments/549589798554435625/1422481231936753736/image.png?ex=6a061ea2&is=6a04cd22&hm=5a0b2aa6edcf6db40b58d727c98ade91c57c4f6cf33902f6cfc70b7e54792968&",
+        "content":"Finally got the setup sorted in my room, buzzing for the mashup today #95DegreesMashup",
+        "attachment":"https://stuff.saku.dev/bot-asset/karina/icon/barry.png",
         "retro":{
-            "date":"13 June 2019",
+            "date":"13 July 2019",
+            "style":"2018",
+            "queueMessageId":"1"
+        }
+    },
+    {
+        "id":"testing",
+        "type":"POPUP",
+        "author":{
+            "name":"TagmanBeesley",
+            "avatar":"https://stuff.saku.dev/bot-asset/karina/icon/barry.png"
+        },
+        "attachment":"https://stuff.saku.dev/bot-asset/karina/icon/barry.png",
+        "retro":{
+            "date":"13 July 2019",
+            "style":"2019",
+            "queueMessageId":"1"
+        }
+    },
+    {
+        "id":"testing",
+        "type":"POPUP",
+        "author":{
+            "name":"TagmanBeesley",
+            "avatar":"https://stuff.saku.dev/bot-asset/karina/icon/barry.png"
+        },
+        "content":"tall image test with a really long and interesting message of stuff that is really long and im trying to make this as long as possible so it truncates and stuff",
+        "retro":{
+            "date":"13 July 2019",
             "style":"2019",
             "queueMessageId":"1"
         }
