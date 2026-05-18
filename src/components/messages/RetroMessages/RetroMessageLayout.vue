@@ -22,6 +22,9 @@
                 <div class="date">
                     <img :src="dateAsset">
                 </div>
+
+                <!-- shine effect -->
+                <!-- <div class="shine"></div> -->
             </div>
         </div>
 
@@ -79,7 +82,7 @@
             logoAsset = "/img/retro/icons/v3-logo.webp";
             break;
         case "2021":
-            logoAsset = "/img/retro/icons/v4-logo.webp";
+            logoAsset = "/img/retro/icons/v4-logo-invert.webp";
             break;
     }
 
@@ -147,20 +150,22 @@
     .polaroid-container {
         /* centering */
         @apply flex items-center justify-center;
+        /* rotation */
+        @apply -rotate-3;
     }
     .polaroid {
         /* background */
         background-position:center;
-        background-size:350%;
-        background-image:url(/img/retro/polaroid-pattern.svg);
+        background-size:440%;
+        background-image:url(/img/retro/polaroid-pattern-2.svg);
 
         /* border */
-        @apply rounded-xl;
+        @apply rounded-lg;
 
         /* shading */
         box-shadow:
             /* inner */
-            inset 0px 0px 12px 3px #00000040,
+            inset 0px 0px 12px 3px #00000090,
             /* outer */
             0px 0px 20px #00000040;
 
@@ -168,8 +173,9 @@
         @apply flex flex-col gap-5 items-center;
         /* padding */
         @apply p-5;
-        /* rotation */
-        @apply -rotate-3;
+
+        /* hide overflow */
+        @apply overflow-hidden;
 
         /* animation */
         transform:scale(1.1) translateX(-50px);
@@ -254,5 +260,31 @@
     }
     .contents-container .message-author img {
         @apply w-18 rounded-full;
+    }
+
+    /* shine effect animation */
+    .shine {
+        /* positioning */
+        @apply absolute top-0 left-0 right-0;
+        /* sizing */
+        @apply h-32;
+        /* colour */
+        @apply bg-white/10;
+        /* blurring */
+        @apply blur-lg;
+
+        /* animation defaults */
+        opacity:0;
+        transform:translateY(-100px);
+        animation:shine 1s 0.6s ease-in-out forwards;
+    }
+    @keyframes shine {
+        50% {
+            opacity:1;
+        }
+        100% {
+            opacity:0;
+            transform:translateY(1000px);
+        }
     }
 </style>
